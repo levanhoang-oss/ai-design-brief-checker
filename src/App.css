@@ -1,0 +1,142 @@
+/* ─── Layout ─────────────────────────────────────────────────── */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 0;
+  flex: 1;
+  min-height: calc(100vh - 64px);
+  align-items: start;
+}
+
+.form-column {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.report-column {
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+  background: var(--bg-base);
+}
+
+/* ─── Empty state ────────────────────────────────────────────── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  min-height: 60vh;
+}
+
+.empty-icon {
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.empty-state h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 360px;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state p strong {
+  color: var(--accent-light);
+}
+
+.empty-checklist {
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.empty-checklist li {
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty-checklist li::before {
+  content: '—';
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* ─── Loading state ──────────────────────────────────────────── */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 60vh;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-subtle);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.loading-state p {
+  font-size: 0.875rem;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .form-column {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .report-column {
+    padding: 1.5rem 1rem;
+    min-height: unset;
+  }
+}

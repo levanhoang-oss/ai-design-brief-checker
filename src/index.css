@@ -1,0 +1,71 @@
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palette */
+  --navy-950: #0a0f1e;
+  --navy-900: #0d1529;
+  --navy-800: #132040;
+  --navy-700: #1a2d56;
+  --navy-600: #243d70;
+  --blue-400: #4a7fc1;
+  --blue-300: #6b9fd4;
+  --blue-200: #a8c8e8;
+  --blue-100: #ddeaf6;
+  --grey-600: #4a5568;
+  --grey-500: #718096;
+  --grey-400: #a0aec0;
+  --grey-300: #cbd5e0;
+  --grey-200: #e2e8f0;
+  --grey-100: #f0f4f8;
+  --white: #ffffff;
+
+  /* Semantic */
+  --bg-base: var(--navy-950);
+  --bg-surface: var(--navy-900);
+  --bg-raised: var(--navy-800);
+  --bg-panel: #111827;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --text-primary: #e8edf5;
+  --text-secondary: #9baec8;
+  --text-muted: #5a6e87;
+  --accent: var(--blue-400);
+  --accent-light: var(--blue-200);
+
+  /* Status */
+  --green: #4caf82;
+  --green-bg: rgba(76, 175, 130, 0.1);
+  --amber: #e6a94a;
+  --amber-bg: rgba(230, 169, 74, 0.1);
+  --red: #e05c5c;
+  --red-bg: rgba(224, 92, 92, 0.1);
+
+  /* Type */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy-900); }
+::-webkit-scrollbar-thumb { background: var(--navy-600); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue-400); }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection { background: var(--blue-400); color: white; }
